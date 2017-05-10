@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--添加了viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="CiAtfgM738rPDlH9KsRPzuLixHMLMaOKWY3YHbGg">
+
+    <title>微天使用户管理中心</title>
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="https://www.weitianshi.cn/static/css/bootstrap.min.css" rel="stylesheet">
+    <!--Font icons :ionicons [ REQUIRED ]-->
+    <link href="https://www.weitianshi.cn/static/css/ionicons.css" rel="stylesheet">
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="https://www.weitianshi.cn/static/css/nifty_admin.css" rel="stylesheet" type="text/css">
+    <!--Page Load Progress Par [ REQUIRED ]-->
+    <link href="https://www.weitianshi.cn/static/plugins/pace/pace.min.css" rel="stylesheet">
+
+    <link href="https://www.weitianshi.cn/static/plugins/magic-check/css/magic-check.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.weitianshi.cn/static/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="https://www.weitianshi.cn/static/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="second.css">
+</head>
+<body>
+<div class="col-md-2"></div>
+<div class="col-md-8">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#basic" aria-controls="home" role="tab" data-toggle="tab">基本信息</a>
+        </li>
+        <li role="presentation">
+            <a href="#standard" aria-controls="profile" role="tab" data-toggle="tab">标准属性</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane tab-pane2" id="basic" style="text-align: center">
+            <!--基本属性-->
+            <!--姓名-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-username-input">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+                <div class="col-md-9">
+                    <input type="text" id="pro-username-input" class="form-control" name="pro_username" value=""
+                           placeholder="请填写您的姓名">
+                </div>
+            </div>
+            <br>
+            <!--性别-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-mail-input">性&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+                <div class="col-md-9" style="text-align: left">
+                    <p class="col-md-4">
+                        <input type="radio" id="sex-man" checked="checked" name="pro_sex"/>男
+                    </p>
+                    <input type="radio" id="sex-woman" name="pro_sex"/>女
+                </div>
+            </div>
+            <br>
+            <!--电话-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-telephone-input">电话号</label>
+                <div class="col-md-9">
+                    <input type="tel" id="pro-telephone-input" class="form-control" name="pro_telephone" value=""
+                           placeholder="请填写您的电话">
+                </div>
+            </div>
+            <br>
+            <!--邮箱-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-mail-input">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+                <div class="col-md-9">
+                    <input type="email" id="pro-mail-input" class="form-control" name="pro_mail" value=""
+                           placeholder="请填写您邮箱">
+                </div>
+            </div>
+            <br>
+            <!--微信-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-telephone-input">微&nbsp;&nbsp;信</label>
+                <div class="col-md-9">
+                    <input type="text" id="pro-wx-input" class="form-control" name="pro_wx" value=""
+                           placeholder="请填写你的微信">
+                </div>
+            </div>
+            <br>
+            <!--QQ-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-qq-input">QQ&nbsp;&nbsp;&nbsp;号</label>
+                <div class="col-md-9">
+                    <input type="number" id="pro-qq-input" class="form-control" name="pro_qq" value=""
+                           placeholder="请填写你的QQ号">
+                </div>
+            </div>
+            <br>
+            <!--学校-学历-二级联动-->
+            <div class="form-group pad-ver">
+                <label class="col-md-2 control-label" for="pro-school-input">学校/学历</label>
+                <div class="col-md-9 clearfix">
+                    <div class="col-md-6 area_select_wrap" >
+                        <input type="text" id="pro-school-input" class="form-control"
+                               name="pro_school" value="" placeholder="学校">
+                    </div>
+                    <div class="col-md-6  area_select_wrap ">
+                        <input type="text" id="pro-graduate-input" class="form-control"
+                               name="pro_graduate" value="" placeholder="学历">
+                    </div>
+                </div>
+            </div>
+            <!--省份---三级联动-->
+            <div class="form-group pad-ver">
+                <label class="col-md-2 control-label">所在地区</label>
+                <div class="col-md-9 clearfix">
+                    <div class="area_select_wrap col-md-4">
+                        <select class="select2-placeholder form-control province_field change_field"
+                                name="pro_area_province">
+                            <option value=""></option>
+                            <option value="1">北京</option>
+                            <option value="21">天津</option>
+                            <option value="41">河北</option>
+                            <option value="225">山西</option>
+                            <option value="356">内蒙古</option>
+                            <option value="471">辽宁</option>
+                            <option value="586">吉林</option>
+                            <option value="656">黑龙江</option>
+                            <option value="802">上海</option>
+                            <option value="823">江苏</option>
+                            <option value="943">浙江</option>
+                            <option value="1045">安徽</option>
+                            <option value="1168">福建</option>
+                            <option value="1263">江西</option>
+                            <option value="1374">山东</option>
+                            <option value="1532">河南</option>
+                            <option value="1709">湖北</option>
+                            <option value="1826">湖南</option>
+                            <option value="1963">广东</option>
+                            <option value="2106">广西</option>
+                            <option value="2230">海南</option>
+                            <option value="2257">重庆</option>
+                            <option value="2299">四川</option>
+                            <option value="2502">贵州</option>
+                            <option value="2600">云南</option>
+                            <option value="2746">西藏</option>
+                            <option value="2827">陕西</option>
+                            <option value="2945">甘肃</option>
+                            <option value="3046">青海</option>
+                            <option value="3098">宁夏</option>
+                            <option value="3125">新疆</option>
+                        </select>
+                    </div>
+                    <div class="area_select_wrap middle_wrap col-md-4">
+                        <select class="select2-placeholder form-control city_field change_field"
+                                name="pro_area_city">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="area_select_wrap col-md-4">
+                        <select class="select2-placeholder form-control county_field" name="pro_area_county">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--公司-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-company-input">公司全称</label>
+                <div class="col-md-9">
+                    <input type="text" id="pro-company-input" class="form-control" name="pro_company_name"
+                           value="" placeholder="公司的全称">
+                </div>
+            </div>
+            <br>
+            <!--职位-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-position-input">职&nbsp;&nbsp;&nbsp;&nbsp;位</label>
+                <div class="col-md-9">
+                    <input type="text" id="pro-position-input" class="form-control" name="pro_position" value=""
+                           placeholder="请填写你的职位">
+                </div>
+            </div>
+            <br>
+            <!--品牌-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-brand-input">品&nbsp;&nbsp;&nbsp;&nbsp;牌</label>
+                <div class="col-md-9">
+                    <input type="text" id="pro-brand-input" class="form-control" name="pro_brand" value="" placeholder="请填写你的品牌">
+                </div>
+            </div>
+            <br>
+            <!--公司介绍-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-introduction-input">公司介绍</label>
+                <div class="col-md-9">
+                <textarea id="pro-introduction-input" class="form-control" rows="5" name="pro_introduction" value=""
+                          placeholder="公司介绍"></textarea>
+                </div>
+            </div>
+            <br>
+            <!--头像-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-mail-input">头&nbsp;&nbsp;&nbsp;&nbsp;像</label>
+                <div class="col-md-9">
+                        <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" class="ima" name="pro_image">
+                        <div class="image_container">
+                            <img class="preview"/>
+                        </div>
+                </div>
+            </div>
+            <!--button内容提交-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="pro-brand-input"></label>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary btn-lg">内容提交</button>
+                    <i class = "icon ion-close"></i>
+                </div>
+            </div>
+            <br>
+        </div>
+        <!--标准属性-->
+        <div role="tabpanel" class="tab-pane" id="standard">
+            <!--所属行业-->
+            <div class="form-group pad-ver">
+               <label class="col-md-2 control-label">所属行业<span class="required">*</span></label>
+                                    <div class="col-md-9" id="industry">
+                                        <div class="checkbox clearfix">
+                                        </div>
+                                    </div>
+            </div>
+            <br style="clear:both">
+            <!--投资规模-(金额)-->
+            <div class="form-group pad-ver">
+            <label class="col-md-2 control-label">投资规模<span class="required">*</span></label>
+            <div class="col-md-9" id="scale">
+                <div class="checkbox clearfix">
+                </div>
+            </div>
+            </div>
+            <!--投资阶段:A轮 B轮-->
+            <div class="form-group pad-ver">
+            <label class="col-md-2 control-label">项目阶段<span class="required">*</span></label>
+            <div class="col-md-9" id="stage">
+                <div class="checkbox clearfix">
+                </div>
+            </div>
+            </div>
+            <!--个人属性-->
+            <div class="form-group pad-ver">
+                <label class="col-md-2 control-label">个人属性<span class="required">*</span></label>
+                <div class="col-md-9" id="attribute">
+                    <div class="checkbox clearfix">
+                        <!-- Inline radio buttons -->
+                        <p class="industry_item">
+                        <input id="attribute-radio-1" class="magic-checkbox industry_checkbox" type="checkbox" value="1" name="is_attribute">
+                        <label for="attribute-radio-1">投资人</label>
+                        </p>
+                        <p class="industry_item">
+                        <input id="attribute-radio-2" class="magic-checkbox industry_checkbox" value="2" type="checkbox" name="is_attribute">
+                        <label for="attribute-radio-2">机构</label>
+                        </p>
+                        <p class="industry_item">
+                        <input id="attribute-radio-0" class="magic-checkbox industry_checkbox" value="0" type="checkbox" name="is_attribute">
+                        <label for="attribute-radio-0">FA</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--地区 -->
+            <div class="form-group pad-ver">
+                <label class="col-md-2 control-label">地区<span class="required">*</span></label>
+                <div class="col-md-9" id="local">
+                    <div class="checkbox clearfix">
+                        <div class="info">
+                            <div class="col-md-3 area_select_wrap">
+                                <select id="area_province" name="area_province">
+                                    <option value="province_name">--请选择省份--</option>
+                                </select>  
+                            </div>
+                            <div class="col-md-3 area_select_wrap">
+                                <select id="area_city" name="area_city">
+                                    <option value="city_name">--请选择城市--</option>
+                                </select> 
+                            </div>
+                            <div class="col-md-3 area_select_wrap">
+                                <select id="area_county" name="area_county">
+                                    <option value="country_name">--请选择区/县--</option>
+                                </select>
+                            </div>
+                            <button id="yes">确认</button>
+                            <div id="show">
+                                <ul id="showS"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-2"></div>
+<script src="https://www.weitianshi.cn/static/javascript/jquery-2.2.4.min.js"></script>
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="https://www.weitianshi.cn/static/javascript/bootstrap.min.js"></script>
+<script src="area.js" type="text/javascript"></script>
+<!-- 写入数据初始化 -->
+<script type="text/javascript">_init_area();</script>
+<script>
+    var response = {
+        "area":[{"area_id": 1, "area_title": "\u5317\u4eac"}, {"area_id": 21, "area_title": "\u5929\u6d25"}, {
+            "area_id": 41,
+            "area_title": "\u6cb3\u5317"
+        }, {"area_id": 225, "area_title": "\u5c71\u897f"}, {
+            "area_id": 356,
+            "area_title": "\u5185\u8499\u53e4"
+        }, {"area_id": 471, "area_title": "\u8fbd\u5b81"}, {
+            "area_id": 586,
+            "area_title": "\u5409\u6797"
+        }, {"area_id": 656, "area_title": "\u9ed1\u9f99\u6c5f"}, {
+            "area_id": 802,
+            "area_title": "\u4e0a\u6d77"
+        }, {"area_id": 823, "area_title": "\u6c5f\u82cf"}, {
+            "area_id": 943,
+            "area_title": "\u6d59\u6c5f"
+        }, {"area_id": 1045, "area_title": "\u5b89\u5fbd"}, {
+            "area_id": 1168,
+            "area_title": "\u798f\u5efa"
+        }, {"area_id": 1263, "area_title": "\u6c5f\u897f"}, {
+            "area_id": 1374,
+            "area_title": "\u5c71\u4e1c"
+        }, {"area_id": 1532, "area_title": "\u6cb3\u5357"}, {
+            "area_id": 1709,
+            "area_title": "\u6e56\u5317"
+        }, {"area_id": 1826, "area_title": "\u6e56\u5357"}, {
+            "area_id": 1963,
+            "area_title": "\u5e7f\u4e1c"
+        }, {"area_id": 2106, "area_title": "\u5e7f\u897f"}, {
+            "area_id": 2230,
+            "area_title": "\u6d77\u5357"
+        }, {"area_id": 2257, "area_title": "\u91cd\u5e86"}, {
+            "area_id": 2299,
+            "area_title": "\u56db\u5ddd"
+        }, {"area_id": 2502, "area_title": "\u8d35\u5dde"}, {
+            "area_id": 2600,
+            "area_title": "\u4e91\u5357"
+        }, {"area_id": 2746, "area_title": "\u897f\u85cf"}, {
+            "area_id": 2827,
+            "area_title": "\u9655\u897f"
+        }, {"area_id": 2945, "area_title": "\u7518\u8083"}, {
+            "area_id": 3046,
+            "area_title": "\u9752\u6d77"
+        }, {"area_id": 3098, "area_title": "\u5b81\u590f"}, {"area_id": 3125, "area_title": "\u65b0\u7586"}], "scale"
+            :
+            [{"scale_id": 1, "scale_money": "100W\u4ee5\u4e0b"}, {
+                "scale_id": 2,
+                "scale_money": "100W-200W"
+            }, {"scale_id": 3, "scale_money": "200W-500W"}, {"scale_id": 4, "scale_money": "500W-1000W"}, {
+                "scale_id": 5,
+                "scale_money": "1000W-2000W"
+            }, {"scale_id": 6, "scale_money": "2000W-5000W"}, {"scale_id": 7, "scale_money": "5000W\u4ee5\u4e0a"}], "stage"
+            :
+            [{"stage_id": 10, "stage_name": "\u79cd\u5b50\u8f6e ", "sort": 1},
+                {
+                "stage_id": 2,
+                "stage_name": "\u5929\u4f7f\u8f6e",
+                "sort": 2
+            }, {"stage_id": 9, "stage_name": "pre-A\u8f6e", "sort": 3}, {
+                "stage_id": 13,
+                "stage_name": "A\u8f6e",
+                "sort": 4
+            }, {"stage_id": 18, "stage_name": "A+\u8f6e", "sort": 5}, {
+                "stage_id": 5,
+                "stage_name": "B\u8f6e",
+                "sort": 6
+            }, {"stage_id": 21, "stage_name": "C\u8f6e", "sort": 7}, {
+                "stage_id": 19,
+                "stage_name": "D\u8f6e",
+                "sort": 8
+            }, {"stage_id": 7, "stage_name": "E\u8f6e", "sort": 9}, {
+                "stage_id": 14,
+                "stage_name": "IPO\u4e0a\u5e02",
+                "sort": 10
+            }, {"stage_id": 17, "stage_name": "IPO\u4e0a\u5e02\u540e", "sort": 11}, {
+                "stage_id": 15,
+                "stage_name": "\u5e76\u8d2d",
+                "sort": 12
+            }, {"stage_id": 12, "stage_name": "\u6218\u7565\u6295\u8d44", "sort": 13}, {
+                "stage_id": 11,
+                "stage_name": "\u6743\u76ca\u6295\u8d44",
+                "sort": 14
+            }, {"stage_id": 20, "stage_name": "\u62db\u5546", "sort": 15}], "industry"
+            :
+            [{"industry_id": 12, "industry_name": "\u793e\u4ea4\u7f51\u7edc"}, {
+                "industry_id": 13,
+                "industry_name": "\u7535\u5b50\u5546\u52a1"
+            }, {"industry_id": 14, "industry_name": "\u533b\u7597\u5065\u5eb7"}, {
+                "industry_id": 18,
+                "industry_name": "\u6559\u80b2\u57f9\u8bad"
+            }, {"industry_id": 20, "industry_name": "\u4f01\u4e1a\u670d\u52a1"}, {
+                "industry_id": 22,
+                "industry_name": "\u91d1\u878d"
+            }, {"industry_id": 35, "industry_name": "\u5927\u6570\u636e"}, {
+                "industry_id": 50,
+                "industry_name": "\u65b0\u5a92\u4f53"
+            }, {"industry_id": 64, "industry_name": "\u6bcd\u5a74\u670d\u52a1"}, {
+                "industry_id": 65,
+                "industry_name": "\u6587\u5316\u5a31\u4e50"
+            }, {"industry_id": 66, "industry_name": "\u65c5\u6e38\u6237\u5916"}, {
+                "industry_id": 67,
+                "industry_name": "\u667a\u80fd\u786c\u4ef6"
+            }, {"industry_id": 68, "industry_name": "\u623f\u4ea7\u5bb6\u88c5"}, {
+                "industry_id": 69,
+                "industry_name": "\u5de5\u5177\u8f6f\u4ef6"
+            }, {"industry_id": 70, "industry_name": "\u751f\u6d3b\u670d\u52a1"}, {
+                "industry_id": 71,
+                "industry_name": "\u6cdb\u517b\u8001\u4ea7\u4e1a"
+            }, {"industry_id": 72, "industry_name": "\u6cdb\u519c\u4e1a"}, {
+                "industry_id": 73,
+                "industry_name": "\u5e73\u53f0\u670d\u52a1"
+            }, {"industry_id": 74, "industry_name": "\u6c7d\u8f66\u4ea4\u901a"}, {
+                "industry_id": 75,
+                "industry_name": "\u7269\u6d41"
+            }, {"industry_id": 76, "industry_name": "\u5e7f\u544a\u8425\u9500"}, {
+                "industry_id": 77,
+                "industry_name": "\u6e38\u620f"
+            }, {"industry_id": 78, "industry_name": "\u623f\u4ea7\u670d\u52a1"}, {
+                "industry_id": 79,
+                "industry_name": "\u4f53\u80b2\u8fd0\u52a8"
+            }, {"industry_id": 80, "industry_name": "\u5de5\u4e1a\u751f\u4ea7"}]
+    };
+    var industry=[];//    行业
+    var area = [];//    地区
+    var scale =[];//    金额
+    var stage = [];//    阶段
+    $('#myTab li:eq(0) a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    $(document).ready(function () {
+        industry = response.industry;
+        area = response.area;
+        scale = response.scale;
+        stage = response.stage;
+//        行业遍历添加
+        for (let i = 0; i<industry.length; i++) {
+            let $industry_1= $('<p class="industry_item"></p>');
+            let $industry_2 = $("<input type='checkbox' class='magic-checkbox industry_checkbox' name='industry[]' id=industry-checkbox-"+industry[i].industry_id+" value=`${industry[i].industry_id}`>");// 创建第一个元素
+//            此处使用ES6方法拼接
+            let $industry_3 = $(`<label for=industry-checkbox-${industry[i].industry_id}>内容</label>`);
+            $industry_3.html(industry[i].industry_name);// 创建第二个元素
+            let $parent = $("#industry"); // 获取div节点。要求是父节点
+            $parent.append($industry_1);
+            $industry_1.append($industry_2); // 添加到div节点中，使之能在网页中显示
+            $industry_1.append($industry_3); // 可以采取链式写法：$parent.append($industry_1).append($industry_2);
+        }
+//        投资规模(金额)
+        for(let i=0;i<scale.length; i++){
+            let $industry_1 = $('<p class="industry_item"></p>');
+            let $industry_2 = $("<input type='checkbox' class='magic-checkbox industry_checkbox' name='scale[]' id=scale-checkbox-"+scale[i].scale_id+" value=`${scale[i].scale_id}`>");// 创建第一个元素
+//            此处使用ES6方法拼接
+            let $industry_3 = $(`<label for=scale-checkbox-${scale[i].scale_id}>内容</label>`);
+            $industry_3.html(scale[i].scale_money);// 创建第二个元素
+            let $parent = $("#scale"); // 获取div节点。要求是父节点
+            $parent.append($industry_1);
+            $industry_1.append($industry_2); // 添加到div节点中，使之能在网页中显示
+            $industry_1.append($industry_3);}
+//         投资阶段
+        for(let i=0;i<stage.length; i++){
+            let $industry_1 = $('<p class="industry_item"></p>');
+            let $industry_2 = $("<input type='checkbox' class='magic-checkbox industry_checkbox' name='stage[]' id=stage-checkbox-"+stage[i].stage_id+" value=`${stage[i].stage_id}`>");// 创建第一个元素
+//            此处使用ES6方法拼接
+            let $industry_3 = $(`<label for=stage-checkbox-${stage[i].stage_id}>内容</label>`);
+            $industry_3.html(stage[i].stage_name);// 创建第二个元素
+            let $parent = $("#stage"); // 获取div节点。要求是父节点
+            $parent.append($industry_1); //添加节点到上一个节点
+            $industry_1.append($industry_2);
+            $industry_1.append($industry_3);}
+//
+        $(function () {
+            $('.ima').change(function(){
+                var $file = $(this);
+                var fileObj = $file[0];
+                var windowURL = window.URL || window.webkitURL;
+                var dataURL;
+                var $img = $(this).parent().find("img[class='preview']");
+
+                if (fileObj && fileObj.files && fileObj.files[0]) {
+                    dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                    $img.attr('src', dataURL);
+                } else {
+                    dataURL = $file.val();
+                    var imgObj = $(this).parent().find("img[class='preview']");
+                    // 两个坑:
+                    // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                    // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                    imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+                }
+            })
+
+        });
+
+//        $("#btn").click(function () {
+//           $.ajax({
+//                url: "https://www.weitianshi.cn/api/category/getWxProjectCategory",
+//                type: "POST",
+//                async: false,
+//                data: "jsonp",
+//                success: function (res) {
+//                    industry=response.industry;
+//                    console.log(industry);
+//                }
+//            });
+//        });
+    });
+</script>
+</body>
+</html>
